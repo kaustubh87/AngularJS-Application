@@ -7,7 +7,6 @@
  * # MainCtrl
  * Controller of the movieManiaApp
  */
-angular.module('movieManiaApp')
-  .controller('MainCtrl', function ($scope) {
+angular.module('movieManiaApp',['ngRoute']).controller('MainCtrl', function ($scope) {
     $scope.title = " Title of Angular Application";
   });
