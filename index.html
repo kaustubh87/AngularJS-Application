@@ -52,15 +52,15 @@
     </div>
 
     <div class="container">
-    <div ng-controller="MainCtrl" class="col-lg-8 row">
-       <div ng-repeat = "movie in movies" style="float:left;">
+    <div ng-controller="MainCtrl">
+
+       <div ng-repeat = "movie in movies" style="float:left;" class="col-lg-8 row">
          <h3 ng-bind ="movie.title"></h3>
-         <img src="{{movie.image}}" style="float:left;"/>
+         <img ng-src="{{movie.image}}" style="float:left;"/>
          <div ng-bind="movie.description"></div>
        </div>
-    </div>
 
-    <div class="col-lg-4">
+         <div class="col-lg-4" class="FormCtrl">
         <h2>Add</h2>
 
       <div class="form-group">
@@ -73,7 +73,7 @@
         <input class="form-control" placeholder="Image" ng-model="newMovieImage">
         <div>
           <h4>Preview</h4>
-          <img src="ng-src={{newMovieImage}}">
+          <img ng-src ="{{newMovieImage}}">
         </div>
       </div>
 
@@ -94,6 +94,10 @@
 
       <button class="btn btn-info" ng-click="addMovie()">Add</button>
     </div>
+
+    </div>
+
+
     </div>
 
     <div class="footer">
