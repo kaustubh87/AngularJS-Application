@@ -53,9 +53,15 @@
 
     <div class="container">
     <div ng-controller="MainCtrl">
-       <h1>{{movieTitle}}</h1>
-       <div ng-bind="movieDescription"></div>
+       <div ng-repeat = "movie in movies" style="float:left;">
+         <h3 ng-bind ="movie.title"></h3>
+         <img src="{{movie.image}}" style="float:left;"/>
+         <div ng-bind="movie.description"></div>
+       </div>
+    </div>
 
+    <div ng-controller="FormCtrl">
+        Title: <input type="text" name="title">
     </div>
     </div>
 
