@@ -40,7 +40,7 @@ angular.module('movieManiaApp',['ngRoute'])
 
     $scope.newMovieTitle = '';
     $scope.newMovieDescription = '';
-    $scope.newMovieImage = '';
+    $scope.newMovieImage = './images/argo.jpeg';
 
     $scope.validateTitle = function(){
 
