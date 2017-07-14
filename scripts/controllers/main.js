@@ -40,14 +40,38 @@ angular.module('movieManiaApp',['ngRoute'])
 
     $scope.newMovieTitle = '';
     $scope.newMovieDescription = '';
-    $scope.newMovieImage = './images/kidd.png';
+    $scope.newMovieImage = '';
 
     $scope.validateTitle = function(){
 
         if($scope.newMovieTitle.length>0){
           console.debug($scope.newMovieTitle);
         }
-
+        else
+        {
+          window.alert('Title cannot be left blank');
+        }
 
     };
+
+    $scope.addMovie = function(){
+        var movie = {
+          title: $scope.newMovieTitle,
+          category: $scope.newMovieCategory,
+          image: $scope.newMovieImage,
+          description: $scope.newMovieDescription
+        };
+
+        $scope.movies.push(movie);
+    };
+
+    $scope.checkCategorySelected = function(){
+        if($scope.newMovieCategory === ''){
+          window.alert('Category cannot be empty');
+        }
+    };
+
+    $scope.checkDescription = function(){
+      console.debug($scope.newMovieDescription);
+    }
   });
