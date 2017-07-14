@@ -36,15 +36,18 @@ angular.module('movieManiaApp',['ngRoute'])
       }
     ];
 
+    $scope.closed = false;
+
     $scope.movies = movieList;
 
-    $scope.newMovieTitle = '';
-    $scope.newMovieDescription = '';
-    $scope.newMovieImage = './images/argo.jpeg';
+    $scope.movie = {
+      title: '',
+      image: './images/argo.jpeg'
+    };
 
     $scope.validateTitle = function(){
 
-        if($scope.newMovieTitle.length>0){
+        if($scope.movie.title.length>0){
           console.debug($scope.newMovieTitle);
         }
         else
@@ -55,23 +58,30 @@ angular.module('movieManiaApp',['ngRoute'])
     };
 
     $scope.addMovie = function(){
-        var movie = {
-          title: $scope.newMovieTitle,
-          category: $scope.newMovieCategory,
-          image: $scope.newMovieImage,
-          description: $scope.newMovieDescription
-        };
-
-        $scope.movies.push(movie);
+        $scope.movies.push(angular.copy($scope.movie));
     };
 
     $scope.checkCategorySelected = function(){
-        if($scope.newMovieCategory === ''){
+        if($scope.movie.category  === ''){
           window.alert('Category cannot be empty');
         }
     };
 
     $scope.checkDescription = function(){
-      console.debug($scope.newMovieDescription);
+      console.debug($scope.movie.description);
     }
+
+    $scope.isValid = function(){
+      if($scope.movie.title === '') {
+        return false;
+      }
+      if($scope.movie.description === ''){
+        return false;
+      }
+      if($scope.movie.category === ''){
+        return false;
+      }
+      return true;
+    }
+
   });
