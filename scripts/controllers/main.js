@@ -37,6 +37,17 @@ angular.module('movieManiaApp',['ngRoute'])
     ];
 
     $scope.movies = movieList;
-  }).controller('FormCtrl',function($scope){
-      console.log('We have a form controller');
+
+    $scope.newMovieTitle = '';
+    $scope.newMovieDescription = '';
+    $scope.newMovieImage = './images/kidd.png';
+
+    $scope.validateTitle = function(){
+
+        if($scope.newMovieTitle.length>0){
+          console.debug($scope.newMovieTitle);
+        }
+
+
+    };
   });
