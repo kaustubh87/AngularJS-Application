@@ -29,6 +29,11 @@ angular
         templateUrl : 'views/singlemovie.html',
         controller: 'MovieCtrl'
       })
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'ContactCtrl',
+        controllerAs: 'contact'
+      })
       .otherwise({
         redirectTo: '/'
       });
