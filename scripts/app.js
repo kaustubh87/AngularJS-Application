@@ -12,10 +12,6 @@ angular
   .module('movieManiaApp', [
     'ngAnimate',
     'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
     'ngRoute'
   ])
   .config(function ($routeProvider) {
@@ -25,14 +21,10 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/movie', {
-        templateUrl : 'views/singlemovie.html',
-        controller: 'MovieCtrl'
-      })
-      .when('/contact', {
-        templateUrl: 'views/contact.html',
-        controller: 'ContactCtrl',
-        controllerAs: 'contact'
+      .when('/home', {
+        templateUrl: 'views/home.html',
+        controller: 'HomeCtrl',
+        controllerAs: 'home'
       })
       .otherwise({
         redirectTo: '/'
