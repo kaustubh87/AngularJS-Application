@@ -1,0 +1,11 @@
+
+
+<div ng-controller="HomeCtrl">
+    <div class="col-lg-7 col-md-7">
+       <div ng-repeat="movie in movies" style="float:left;">
+          <h3 ng-bind="movie.title"></h3>
+          <img src="{{movie.image}}" style="float:left;"/>
+          <p ng-bind="movie.description"></p>
+        </div>
+    </div>
+</div>
