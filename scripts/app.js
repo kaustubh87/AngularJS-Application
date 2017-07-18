@@ -15,6 +15,7 @@ angular
     'ngRoute'
   ])
   .config(function ($routeProvider) {
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -26,10 +27,15 @@ angular
         controller: 'HomeCtrl',
         controllerAs: 'home'
       })
-      .when('/movie/:id/:slug', {
+      .when('/movie/:id', {
         templateUrl: 'views/movie.html',
         controller: 'MovieCtrl',
         controllerAs: 'movie'
+      })
+      .when('/movies', {
+        templateUrl: 'views/movies.html',
+        controller: 'MoviesCtrl',
+        controllerAs: 'movies'
       })
       .otherwise({
         redirectTo: '/'
