@@ -26,6 +26,11 @@ angular
         controller: 'HomeCtrl',
         controllerAs: 'home'
       })
+      .when('/movie/:id/:slug', {
+        templateUrl: 'views/movie.html',
+        controller: 'MovieCtrl',
+        controllerAs: 'movie'
+      })
       .otherwise({
         redirectTo: '/'
       });
