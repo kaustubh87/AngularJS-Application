@@ -4,7 +4,7 @@
    <div class="col-lg-7 col-md-7">
      <button class="btn btn-info" ng-click="goToRandomMovie()">Random movie</button>
       <div ng-repeat="movie in movies" style="clear:both;">
-        <a ng-href="movie/{{movie.id}}/{{movie.slug}}">
+        <a ng-href="#/movie/{{movie.id}}">
           <img ng-src="{{movie.image}}" style="float:left; width:80px; margin-right:10px;"/>
           <h3 ng-bind="movie.title"></h3>
           <div style="font-size:  0.8em; font-style:italic;">
