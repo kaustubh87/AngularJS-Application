@@ -9,7 +9,7 @@
  */
 angular.module('movieManiaApp')
   .controller('MoviesCtrl', function ($scope, $routeParams, $location) {
-
+      var id = parseInt($routeParams.id);
      var movieList = [
       {
         id: 23,
@@ -33,6 +33,14 @@ angular.module('movieManiaApp')
       }];
 
     $scope.movies = movieList;
+
+    for (var index in movieList){
+      var movie = movieList[index];
+      if(movie.id === id){
+        $scope.movie = movie;
+        break;
+      }
+    }
 
     $scope.goToRandomMovie = function(){
         var id = parseInt($routeParams.id , 10);
