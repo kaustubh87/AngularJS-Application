@@ -9,7 +9,7 @@
  */
 angular.module('movieManiaApp')
   .controller('MoviesCtrl', function ($scope, $routeParams, $location) {
-      var id = parseInt($routeParams.id);
+    var id = parseInt($routeParams.id);
      var movieList = [
       {
         id: 23,
