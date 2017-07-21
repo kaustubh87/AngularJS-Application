@@ -13,6 +13,8 @@ angular.module('movieManiaApp')
    $http.get('/movies.json').then(function(result){
 
      $scope.movies = result.data;
+   }, function(result){
+     console.log('The request failed ' +result);
    });
 
 
