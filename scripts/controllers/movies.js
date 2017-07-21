@@ -8,29 +8,8 @@
  * Controller of the movieManiaAppApp
  */
 angular.module('movieManiaApp')
-  .controller('MoviesCtrl', function ($scope, $routeParams, $location) {
+  .controller('MoviesCtrl', function ($scope, $routeParams, $location,$http) {
     var id = parseInt($routeParams.id);
-     var movieList = [
-      {
-        id: 23,
-        'title' : 'Ace Drummond',
-        'image': './images/ace.jpeg',
-        'description': 'This is based on the comic strip character'
-
-      },
-      {
-        id: 5,
-        'title' : 'And then there were none',
-        'image': './images/none.jpeg',
-        'description': 'Based on a novel and subsequemt stage play'
-
-      },
-      {
-        id: 43,
-        'title': 'Captain Kidd',
-        'image' : './images/kidd.png',
-        'description': 'The unhistorical adventures of pirate Captain Kidd'
-      }];
 
     $scope.movies = movieList;
 
