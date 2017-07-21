@@ -34,6 +34,8 @@ angular.module('movieManiaApp')
         'description': 'The unhistorical adventures of pirate Captain Kidd'
       }];
 
+
+
         for(var index in movieList){
           var movie = movieList[index];
           if(movie.id === id){
