@@ -8,7 +8,7 @@
  * Controller of the movieManiaAppApp
  */
 angular.module('movieManiaApp')
-  .controller('MoviesCtrl', function ($scope, $routeParams, $location,$http) {
+  .controller('MoviesCtrl', function ($scope, $routeParams, $location, $http) {
 
    $http.get('/movies.json').then(function(data){
       console.debug(data);
