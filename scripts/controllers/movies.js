@@ -10,12 +10,13 @@
 angular.module('movieManiaApp')
   .controller('MoviesCtrl', function ($scope, $routeParams, $location, $http) {
 
-   $http.get('/movies.json').then(function(data){
-      console.debug(data);
-      $scope.movies = data;
-   }, function(error){
+   $http.get('/movies.json').then(function(result){
 
+     $scope.movies = result.data;
    });
+
+
+
 
     $scope.goToRandomMovie = function(){
         var id = parseInt($routeParams.id , 10);
