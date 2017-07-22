@@ -9,10 +9,11 @@
  */
 angular.module('movieManiaApp')
   .controller('MoviesCtrl', function ($scope, $routeParams, $location, $http) {
+    var url = "https://api.github.com/search/repositories?q=tetris+language:assembly&sort=stars&order=desc";
 
-   $http.get('/movies.json').then(function(result){
+   $http.get(url).then(function(result){
 
-     $scope.movies = result.data;
+     $scope.repo = result;
    }, function(result){
      console.log('The request failed ' +result);
    });
