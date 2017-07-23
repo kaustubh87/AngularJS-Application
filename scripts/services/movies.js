@@ -7,17 +7,31 @@
  * # Movies
  * Factory in the movieManiaAppApp.
  */
-angular.module('movieManiaAppApp')
-  .factory('Movies', function () {
+angular.module('movieManiaApp')
+  .factory('Movies', function ($http) {
     // Service logic
     // ...
 
-    var meaningOfLife = 42;
+      //Private Area
+
+      var moviesRequest = null;
+
 
     // Public API here
     return {
-      someMethod: function () {
-        return meaningOfLife;
+      load: function () {
+        if(!moviesRequest){
+          moviesRequest  = $http.get('/movies.json');
+        }
+        return moviesRequest;
+      },
+      find: function(id, movies){
+        for(var i in movies){
+          var movie = movies[i];
+          if(id === movie.id){
+            return movie;
+          }
+        }
       }
     };
   });
